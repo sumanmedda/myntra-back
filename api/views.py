@@ -11,7 +11,7 @@ class ItemsViews(APIView):
     items = Items.objects.all()
     
     serializer = ItemSerializer(items, many=True)
-    return Response({"status":200,"message": "Items Fetched", "items":[serializer.data]},)
+    return Response({"status":200,"message": "Items Fetched", "items":serializer.data},)
   
   # Create Items
   def post(self, request):
